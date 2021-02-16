@@ -1,0 +1,129 @@
+
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <script src="script.js"></script> 
+        <link rel="stylesheet" href="style.css" /> 
+        <meta charset="UTF-8" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        
+        <title>Basic banking system</title> 
+
+    </head> 
+    <body class="p-3 mb-2 bg-light"> 
+        <!-- Here a loader is created which  
+             loads till response comes -->
+        <div class="d-flex justify-content-center"> 
+            <div class="spinner-border" 
+                 role="status" id="loading"> 
+                <span class="sr-only">Loading...</span> 
+            </div> 
+             
+            
+        </div> 
+         <div  class="container">
+          <h1 class="p-3 mb-2 bg-secondary d-flex justify-content-center">The Sparks Foundation</h1>
+        <h2  class=" p-3 mb-2 bg-secondary d-flex justify-content-center">Basic Banking System</h2> 
+        
+         </div>
+        
+        <!-- button to  control table for showing data -->
+        <div class="btn-group btn-group-lg  d-flex justify-content-xl-center container " role="group" aria-label="Basic example"> 
+               
+           <!-- <button id="tran_m"  class="btn btn-dark"  type="button" ><h4>Transfer Money</h4></button> -->
+               <button id="show"  class="btn btn-dark"><h4>Show All customer_Accounts</h4></button>
+                
+          <button id="trac_history"  class="btn btn-dark"><h4>Show All Transaction_history</h4></button>
+               
+       
+        
+     <!--   <button class="btn btn-dark" type="button">
+            <h4>Add Account</h4>
+          </button>
+          -->
+        </div>
+
+
+       <div id="welcome"  class="container  text-center">
+         <h1>welcome </h1> <br>
+        <h2>  transfer  money from one user to another</h2>
+       <h2>click on Show All customer_Account to get customer_Accounts</h2>
+       <h2>click on Show All Transaction_history to get Transaction_history</h2>
+
+
+       </div>
+
+
+        <div class="container ">
+      
+<!-----------------tranfer UI-->
+<div id ="trn_money" class="  ">
+  <h3 class="d-flex justify-content-center">Transfer Money</h3>
+  <div id ="userprofile" >
+
+
+  </div>
+<form >
+   <div class="form-group">
+   <label for="id1">Send form</label>
+   <select class="form-control " id="send_form">
+     </select>
+     
+   </div>
+   <label for="transfer">Transfer Amount $</label>
+   <input type="number" id="send_amount" name="send_money">  
+  <div class="form-group">
+   <label for="id2">Send to</label>
+   <select class="form-control " id="send_to">
+     </select>
+   </div>
+
+
+ </form> 
+ <button id="send1" type="submit">send money</button>
+</div>
+
+
+
+
+ <!---tables for showing data-->
+        <div id="allusers" class="">
+         
+            
+            <h2>Filterable Table</h2>
+            <p>Type something in the input field to search the table for names, acc_id or emails:</p>  
+            <input class="form-control" id="myInput" type="text" placeholder="Search..">
+            <br>
+            <h2>CUSTOMER ACCOUNTS</h2>
+            <div class="table-responsive-md table-wrapper-scroll-y my-custom-scrollbar">
+            <table id="users"  class="table table-dark table-striped  table-bordered table-striped mb-0" ></table>
+            </div>
+          </div>
+        </div>
+
+            <div id="all_trc" class="container ">
+            <h2>TRANSACTION HISTORY</h2>
+
+            <div class="table-responsive-md">
+              <table id="tra"  class="table" ></table>
+            </div>
+               
+                </div> 
+             
+              
+    </body> 
+    <script>
+        $(document).ready(function(){
+          $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+        });
+        </script>
+</html> 
