@@ -219,46 +219,53 @@ for (let r of data2.data) {
 `;
 
 
-} 
+}
 
 document.getElementById("tra").innerHTML = tab2; 
 
-const allusers=document.getElementById('allusers');
-const all_trc=document.getElementById('all_trc');
-const trn_money=document.getElementById('trn_money');
-const welcome=document.getElementById("welcome");
-
-allusers.style.display='none';
-all_trc.style.display='none';
-trn_money.style.display='none';
 
 
-document.getElementById("show").addEventListener("click", function() {
+}
+
+window.onload = function(){
+
+
+  const allusers=document.getElementById('allusers');
+  const all_trc=document.getElementById('all_trc');
+  const trn_money=document.getElementById('trn_money');
+  const welcome=document.getElementById("welcome");
   
+  allusers.style.display='none';
   all_trc.style.display='none';
-  welcome.style.display='none';
- trn_money.style.display = 'block';
- allusers.style.display = 'block';
-
-});
-
-document.getElementById("trac_history").addEventListener("click", function() {
-  welcome.style.display = 'none';
-allusers.style.display='none';
-  trn_money.style.display = 'none';
-  all_trc.style.display = 'block';
+  trn_money.style.display='none';
   
-});
- 
-
-const idd1=document.getElementById('send_form');
-const idd2 =document.getElementById('send_to');
-const amount_to_send =document.getElementById('send_amount');
-
-document.getElementById('send1').addEventListener('click',()=>{
- console.log("helo")
-     update_data(idd1.value,idd2.value,amount_to_send.value)
-
-});
+  
+  document.getElementById("show").addEventListener("click", function() {
+    
+    all_trc.style.display='none';
+    welcome.style.display='none';
+   trn_money.style.display = 'block';
+   allusers.style.display = 'block';
+  
+  });
+  
+  document.getElementById("trac_history").addEventListener("click", function() {
+    welcome.style.display = 'none';
+  allusers.style.display='none';
+    trn_money.style.display = 'none';
+    all_trc.style.display = 'block';
+    
+  });
+   
+  
+  const idd1=document.getElementById('send_form');
+  const idd2 =document.getElementById('send_to');
+  const amount_to_send =document.getElementById('send_amount');
+  
+  document.getElementById('send1').addEventListener('click',()=>{
+   console.log("helo")
+       update_data(idd1.value,idd2.value,amount_to_send.value)
+  
+  });
 
 }
