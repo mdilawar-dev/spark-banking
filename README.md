@@ -1,9 +1,9 @@
 # spark-banking
  basic banking app
- To run the applicaton
+ # To run the applicaton
  
- npm install
- node server.js
+  npm install
+  node server.js
    or click link bleow to check live project..
    link:https://spark-basic-banking-mdev.glitch.me/
 the-sparks-foundation
